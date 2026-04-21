@@ -1,0 +1,26 @@
+   #mainButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button id="targetButton">Target Button</button>
+  <button id="mainButton">Randomize Target Color</button>
+
+  <script>
+    function randomColor() {
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    document.getElementById('mainButton').addEventListener('click', function () {
+      const target = document.getElementById('targetButton');
+      target.style.backgroundColor = randomColor();
+    });
+  </script>
+</body>
+</html>
